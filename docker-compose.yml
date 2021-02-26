@@ -1,10 +1,12 @@
 version: '3.1'
 services:
   worker:
+    container_name: bw-backup-worker
     build: .
     restart: always
     volumes:
-      - ./db.sqlite3:/db.sqlite3
-      - ./backups:/backups
+      - $HOST_DATA_DIR:/data
+      - $HOST_BACKUP_DIR:/backups
+      - $HOST_RCLONE_CONFIG:/root/.config/rclone/rclone.conf
     env_file:
       - .env
