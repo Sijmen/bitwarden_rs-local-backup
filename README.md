@@ -15,7 +15,7 @@ HOST_BACKUP_DIR=/data/bitwarden/backups
 # Data dir on the host
 HOST_DATA_DIR=/data/bitwarden
 # Location of the rclone config on the host.
-HOST_RCLONE_CONFIG=/data/bitwarden/backups/rclone.conf
+HOST_RCLONE_CONFIG_DIR=/data/rclone/rclone.conf
 # Encryption password
 BACKUP_ENCRYPTION_KEY=somepassword
 # Rclone destinations for the backup, pipe (|) separted values.
@@ -28,7 +28,7 @@ docker exec -it bw-backup-worker /bin/bash
 rclone config
 # follow instructions of rclone
 ``` 
-Ensure that the rclone config is stored on the host! It is mounted in the container from `HOST_RCLONE_CONFIG`.
+Ensure that the rclone config is stored on the host! It is mounted in the container from `HOST_RCLONE_CONFIG_DIR`.
 
 ## Stop, update, shutdown
 In the checkout folder do this:
